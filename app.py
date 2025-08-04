@@ -8,7 +8,7 @@ features = joblib.load("feature_list.joblib")
 
 
 # Set the page title and layout
-st.set_page_config(page_title="Your Drug Dossier Evaluation AI-powered Assistant", layout="wide")
+st.set_page_config(page_title="Your Drug Dossier Evaluation AI-powered Assistant")
 
 # App header
 st.title("Your Drug Dossier Evaluation AI-powered Assistant")
@@ -18,7 +18,7 @@ Upload a dossier checklist in `.csv` format and let the model predict its **regu
 """)
 
 # Upload CSV file
-uploaded_file = st.file_uploader("📄 Upload your dossier checklist CSV", type=["csv"])
+uploaded_file = st.file_uploader(" Upload your dossier checklist CSV")
 
 if uploaded_file:
     try:
@@ -38,9 +38,7 @@ if uploaded_file:
             prediction = model.predict(df[feature_list])
             prediction_label = ['❌ Not Accepted' if p == 0 else '✅ Accepted' for p in prediction]
 
-            # Add prediction to dataframe
-            df['Evaluation_Outcome'] = prediction_label
-
+        
             # Show result
             st.success("✅ Dossier evaluation completed.")
             st.dataframe(df)
