@@ -57,4 +57,3 @@ st.markdown("""
     ⚠️ This tool is intended for support only. Always refer to official regulatory guidelines.
 </div>
 """, unsafe_allow_html=True)
-st.write("✅ Loaded feature list:", feature_list.joblib)
