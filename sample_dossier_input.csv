@@ -1,0 +1,6 @@
+Application_Complete,Has_Valid_LTR,Has_Valid_GMP,GMP_Authority,Labeling_Compliant,Drug_Substance_Purity,Total_Impurities,Dissolution_Rate,Stability_Data_Zone_IVb,Proposed_Shelf_Life_Months,Study_Type,BE_Study_Outcome,Primary_Endpoint_Met
+0,1,0,0,1,100,1.2732148682926614,79,1,36,0,1,1
+1,0,0,1,0,100,1.2621410049277337,97,1,12,0,0,0
+0,0,0,1,1,96,0.11342597991746307,97,0,36,0,1,1
+0,0,0,1,1,98,0.14381860757868994,85,1,12,0,1,0
+0,1,1,0,1,99,1.0970718544909395,84,0,36,1,1,1
