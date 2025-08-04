@@ -31,3 +31,25 @@ if uploaded_file:
 
     except Exception as e:
         st.error(f"Error: {e}")
+# Upload and read the sample dossier
+uploaded_file = st.file_uploader("Upload dossier for evaluation", type="csv")
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+
+    # Load model and features
+    model = joblib.load("your_model.joblib")
+    feature_list = joblib.load("feature_list.joblib")  # list of features used in training
+
+    # Ensure required features are present
+    missing = [col for col in feature_list if col not in df.columns]
+    if missing:
+        st.error(f"❌ Missing columns: {missing}")
+    else:
+        # Make predictions
+        prediction = model.predict(df[feature_list])
+
+        # Add predictions to the dataframe
+        df['Evaluation_Outcome'] = prediction
+
+        st.success("✅ Evaluation complete")
+        st.dataframe(df)
